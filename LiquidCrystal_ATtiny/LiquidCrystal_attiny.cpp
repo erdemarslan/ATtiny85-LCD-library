@@ -30,7 +30,7 @@ LiquidCrystal_I2C::LiquidCrystal_I2C(uint8_t lcd_Addr,uint8_t lcd_cols,uint8_t l
   _Addr = lcd_Addr;
   _cols = lcd_cols;
   _rows = lcd_rows;
-  _backlightval = LCD_NOBACKLIGHT;
+  _backlightval = LCD_BACKLIGHT;
 }
 
 void LiquidCrystal_I2C::init(){
@@ -219,7 +219,7 @@ inline void LiquidCrystal_I2C::command(uint8_t value) {
 
 inline size_t LiquidCrystal_I2C::write(uint8_t value) {
 	send(value, Rs);
-	return 0;
+	return 1;
 }
 
 
